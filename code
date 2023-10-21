@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    // Öğrenci bilgilerini ve notları alın
+    char ogrenci_numarasi[20];
+    float vize, final, lab, yoklama;
+
+    printf("Öğrenci Numarası: ");
+    scanf("%s", ogrenci_numarasi);
+
+    printf("Vize Notu: ");
+    scanf("%f", &vize);
+
+    printf("Final Notu: ");
+    scanf("%f", &final);
+
+    printf("Lab Notu: ");
+    scanf("%f", &lab);
+
+    printf("Yoklama Notu: ");
+    scanf("%f", &yoklama);
+
+    // Ortalama hesaplama
+    float ortalama = vize * 0.35 + final * 0.5 + lab * 0.1 + yoklama * 0.05;
+
+    // Harf notunu belirleme
+    char harf_notu;
+
+    if (ortalama >= 85) {
+        harf_notu = 'A';
+    } else if (ortalama >= 70) {
+        harf_notu = 'B';
+    } else if (ortalama >= 60) {
+        harf_notu = 'C';
+    } else if (ortalama >= 50) {
+        harf_notu = 'D';
+    } else {
+        harf_notu = 'F';
+    }
+
+    // Sonucu ekrana yazdırma
+    printf("Öğrenci Numarası: %s\n", ogrenci_numarasi);
+    printf("Ortalama: %.2f\n", ortalama);
+    printf("Harf Notu: %c\n", harf_notu);
+
+    return 0;
+}
+
+
